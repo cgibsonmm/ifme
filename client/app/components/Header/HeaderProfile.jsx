@@ -7,19 +7,24 @@ import type { Profile } from './index';
 import { Notifications } from '../../widgets/Notifications';
 import css from './Header.scss';
 import globalCSS from '../../styles/_global.scss';
+import { I18n } from '../../libs/i18n';
 
 export type Props = {
   profile: Profile,
 };
 
-const notificationsElement = notifications => (
-  <button type="button" className="buttonGhostXS" aria-label={notifications}>
+const notificationsElement = (
+  <button
+    type="button"
+    className="buttonGhostXS"
+    aria-label={I18n.t('notifications.plural')}
+  >
     <FontAwesomeIcon icon={faBell} />
   </button>
 );
 
 const displayInfoLinks = (headerProfile: Profile) => {
-  const { profile, account, notifications } = headerProfile;
+  const { profile, account } = headerProfile;
   return (
     <div className={css.headerProfileInfoLinks}>
       <div>
@@ -33,12 +38,7 @@ const displayInfoLinks = (headerProfile: Profile) => {
         </a>
       </div>
       <div>
-        <Notifications
-          element={notificationsElement(notifications.plural)}
-          plural={notifications.plural}
-          none={notifications.none}
-          clear={notifications.clear}
-        />
+        <Notifications element={notificationsElement} />
       </div>
     </div>
   );

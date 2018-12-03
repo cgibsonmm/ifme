@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 describe HeaderHelper do
   describe '#header_props' do
     let(:mobile_only) { 'mobile_only_stub' }
@@ -14,11 +13,6 @@ describe HeaderHelper do
         account: {
           name: 'Account',
           url: '/users/edit'
-        },
-        notifications: {
-          plural: 'Notifications',
-          none: 'There are none',
-          clear: 'Clear'
         }
       }
     end

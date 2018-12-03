@@ -21,11 +21,6 @@ export type Profile = {
   name: string,
   profile: Link,
   account: Link,
-  notifications: {
-    plural: string,
-    none: string,
-    clear: string,
-  },
 };
 
 export type Props = {

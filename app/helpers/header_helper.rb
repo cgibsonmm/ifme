@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 module HeaderHelper
   def header_props
     {
@@ -25,14 +24,6 @@ module HeaderHelper
     }
   end
 
-  def notifications
-    {
-      plural: t('notifications.plural'),
-      none: t('notifications.none'),
-      clear: t('notifications.clear')
-    }
-  end
-
   def profile
     {
       avatar: current_user.avatar.url,
@@ -41,8 +32,7 @@ module HeaderHelper
         name: t('profile.index.title'),
         url: profile_index_path(uid: current_user.uid)
       },
-      account: account,
-      notifications: notifications
+      account: account
     }
   end
 
